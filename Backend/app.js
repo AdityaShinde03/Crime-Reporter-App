@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import connectDB from './config/database.js';
 import userRouter from './routes/userRoutes.js';
 import passport from './config/passport.js';
+import reportRouter from './routes/reportRoutes.js';
 
 dotenv.config();
 connectDB();
@@ -20,5 +21,6 @@ app.use(cookieParser());
 app.use(passport.initialize());
 
 app.use("/api/v1", userRouter);
+app.use("/api/v1", reportRouter);
 
 export default app;
